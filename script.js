@@ -16,8 +16,8 @@ const closeModal = function () {
 
 for (let i = 0; i < btnsOpenModal.length; i++)
   btnsOpenModal[i].addEventListener('click', openModal);
-btnCLoseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
+  btnCLoseModal.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Control' && !modal.classList.contains('hidden')) {
@@ -26,6 +26,17 @@ document.addEventListener('keydown', function (e) {
 });
 
  */
+
+/* use key listener to addEventListener ex: 
+document.addEventListener('keydown', function(e)
+console.log(e.key) // to find which keys pressed.
+)
+
+3 types of keys, 
+keypress - when user click, it will work reapidly. 
+keyup - when user press and realse the key, up the finger from key, it will work then. 
+keydown - when user key down or press the key, it will work imedietly.  */
+
 'use strict';
 
 const modal = document.querySelector('.modal');
