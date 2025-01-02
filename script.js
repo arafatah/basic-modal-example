@@ -1,4 +1,4 @@
-'use strict';
+/* 'use strict';
 
 const modal = document.querySelector('.modal');
 const btnCLoseModal = document.querySelector('.close-modal');
@@ -22,5 +22,32 @@ overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Control' && !modal.classList.contains('hidden')) {
     closeModal();
+  }
+});
+
+ */
+'use strict';
+
+const modal = document.querySelector('.modal');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
+const overlay = document.querySelector('.overlay');
+
+// Function to toggle modal visibility
+const toggleModal = function () {
+  modal.classList.toggle('hidden');
+  overlay.classList.toggle('hidden');
+};
+
+// Add event listener to each "Show Modal" button
+btnsOpenModal.forEach(btn => btn.addEventListener('click', toggleModal));
+
+// Add event listeners for close actions
+btnCloseModal.addEventListener('click', toggleModal);
+overlay.addEventListener('click', toggleModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Control' && !modal.classList.contains('hidden')) {
+    toggleModal();
   }
 });
